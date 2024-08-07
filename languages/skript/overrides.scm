@@ -1,0 +1,18 @@
+(define-syntax override-skript
+  (syntax-rules ()
+    ((_ x)
+     (override-regexp x
+                      '(("comment" . "#")
+                        ("keyword" . "\\b(return|stop|if|else|loop|while)\\b")
+                        ("variable" . "\\b([a-zA-Z_][a-zA-Z_0-9]*)\\b")
+                        ("string" . "\"")
+                        ("number" . "\\b[0-9]+\\.[0-9]+\\b")
+                        ("colour" . "&[A-Fa-f0-9kLlLmMnNoOrR]")
+                        ("input" . "(%)")
+                        ("value-event" . "(event)-([\\w]+)-([\\d]+)")
+                        ("value-loop" . "(loop)-([\\w]+)-([\\d]+)")
+                        ("value-arg" . "(arg)-([\\w]+)-([\\d]+)")
+                        ("literal-permission" . "permission (\")")
+                        ("literal-string" . "\"")
+                        ("literal-number" . "\\b[0-9]+\\.[0-9]+\\b")
+                        ("literal-colour" . "&[A-Fa-f0-9kLlLmMnNoOrR]"))))))

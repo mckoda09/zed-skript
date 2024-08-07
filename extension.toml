@@ -1,0 +1,7 @@
+id = "skript"
+name = "Skript"
+description = "Skript support."
+version = "0.0.1"
+schema_version = 1
+authors = ["Aleksii Nikitin <mckoda09@gmail.com>"]
+repository = "https://github.com/zed-industries/zed"

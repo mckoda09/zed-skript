@@ -1,0 +1,77 @@
+name = "Skript"
+
+[skript]
+name = "Skript"
+scope_name = "source.skript"
+file_types = ["sk"]
+
+[skript.comments]
+line_comment = "#"
+
+[skript.members]
+options = "^options:"
+variables = "^variables:"
+aliases = "^aliases:"
+aliases_entry = "^[\\s]+([\\w ]+) ?(=)([\\w ,]+)\\s*$"
+event = "^(on|at|every) (.+)(:)"
+function = "^(function) (\\w+)\\((.*)\\)\\s*(::) ([\\w ]+)(:)"
+command = "^command"
+command_options = "(cooldown|executable by|description|cooldown message|(?:no )?permission message|aliases|usage|permission|cooldown bypass|cooldown storage|trigger):"
+
+[skript.code]
+literals = [
+    "literal-permission",
+    "literal-string",
+    "literal-number",
+    "literal-colour",
+]
+
+constants = ["none", "null", "false", "true"]
+
+variables = ["variable-other", "variable-local"]
+
+values = ["value-event", "value-loop", "value-arg"]
+
+expressions = ["expression-function-use"]
+
+effects = ["effect-stop"]
+
+
+[skript.literal-permission]
+
+pattern = "permission (\")"
+
+
+[skript.literal-string]
+
+pattern = "\""
+
+
+[skript.literal-number]
+
+pattern = "\\b[0-9]+\\.[0-9]+\\b"
+
+
+[skript.literal-colour]
+
+pattern = "&[A-Fa-f0-9kLlLmMnNoOrR]"
+
+
+[skript.input]
+
+pattern = "(%)"
+
+
+[skript.value-event]
+
+pattern = "(event)-([\\w]+)-([\\d]+)"
+
+
+[skript-mode.value-loop]
+
+pattern = "(loop)-([\\w]+)-([\\d]+)"
+
+
+[skript-mode.value-arg]
+
+pattern = "(arg)-([\\w]+)-([\\d]+)"
